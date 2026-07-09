@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de autorreflexión — Manduco</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">Man<span>duco</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="consejos.html">Consejos</a></li>
+      <li><a href="test.html">Test</a></li>
+      <li><a href="diario.html">Diario</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="page-hero">
+    <span class="kicker">ocho preguntas, dos minutos</span>
+    <h1>Un momento para revisar cómo estás</h1>
+    <p>Esto no es un diagnóstico ni una prueba clínica: es una forma rápida de notar cómo ha estado tu semana y qué categoría de consejos podría servirte más ahora mismo.</p>
+  </div>
+
+  <div class="test-shell">
+    <div class="test-progress">
+      <div class="test-progress-fill" id="progress-fill"></div>
+    </div>
+
+    <div id="test-body"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer container">
+  <span>Manduco · hecho con calma</span>
+  <span>© <span data-year></span> Manduco. No sustituye atención profesional.</span>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/test.js"></script>
+
+</body>
+</html>

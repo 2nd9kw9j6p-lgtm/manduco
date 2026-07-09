@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consejos — Manduco</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">Man<span>duco</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="consejos.html">Consejos</a></li>
+      <li><a href="test.html">Test</a></li>
+      <li><a href="diario.html">Diario</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <div class="page-hero">
+    <span class="kicker">la biblioteca completa</span>
+    <h1>Todos los consejos</h1>
+    <p>Filtra por tema o busca una palabra clave. Cada tarjeta es un consejo corto que puedes aplicar hoy mismo.</p>
+  </div>
+
+  <input type="text" id="search-input" class="search-input" placeholder="Buscar, por ejemplo: dormir, límites, examen...">
+
+  <div class="filters-bar" id="filters-bar">
+    <button class="chip active" data-cat="todos">Todos</button>
+  </div>
+
+  <div class="tips-grid" id="tips-grid"></div>
+  <div class="empty-state" id="empty-state" style="display:none;">
+    No encontramos consejos con esa búsqueda. Prueba con otra palabra o quita el filtro.
+  </div>
+
+</main>
+
+<footer class="site-footer container">
+  <span>Manduco · hecho con calma</span>
+  <span>© <span data-year></span> Manduco. No sustituye atención profesional.</span>
+</footer>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/consejos.js"></script>
+
+</body>
+</html>

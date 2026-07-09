@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manduco — Un espacio para pensar antes de reaccionar</title>
+<meta name="description" content="Consejos psicológicos prácticos sobre ansiedad, autoestima, relaciones, estrés y hábitos saludables.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Man<span>duco</span></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pages/consejos.html">Consejos</a></li>
+      <li><a href="pages/test.html">Test</a></li>
+      <li><a href="pages/diario.html">Diario</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <span class="hero-eyebrow">un respiro antes de seguir</span>
+      <h1>Un espacio para pensar antes de reaccionar</h1>
+      <p class="lead">Manduco es un mazo de consejos psicológicos prácticos: ideas cortas para momentos de ansiedad, dudas sobre ti mismo, conflictos o simplemente un mal día.</p>
+      <div class="hero-actions">
+        <a href="pages/consejos.html" class="btn btn-primary">Explorar consejos</a>
+        <a href="pages/test.html" class="btn btn-outline">Hacer el test rápido</a>
+      </div>
+      <p class="hero-disclaimer">Manduco no reemplaza una consulta con un psicólogo o psiquiatra. Es un acompañante de bolsillo para el día a día, no un diagnóstico.</p>
+    </div>
+
+    <div class="deck-wrap">
+      <div class="deck-card behind-2"></div>
+      <div class="deck-card behind-1"></div>
+      <div class="deck-card front">
+        <span class="card-tag"># respirar</span>
+        <h3 class="card-title">Cargando carta...</h3>
+        <p class="card-text"></p>
+        <span class="card-corner">🌤️</span>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center; margin-top:-2rem; margin-bottom: 2rem;">
+    <button id="draw-card-btn" class="btn btn-plum">🃏 Sacar otra carta</button>
+  </div>
+
+  <section id="categorias">
+    <div class="section-head">
+      <span class="kicker">seis temas</span>
+      <h2>Elige por dónde empezar</h2>
+      <p>Cada categoría reúne consejos cortos, pensados para leerse en un minuto y aplicarse el mismo día.</p>
+    </div>
+    <div class="grid-3" id="category-grid"></div>
+  </section>
+
+  <section>
+    <div class="band-plum">
+      <div>
+        <h2>¿No sabes por dónde empezar?</h2>
+        <p>Responde 8 preguntas rápidas y te mostramos qué categoría de consejos podría servirte más hoy.</p>
+      </div>
+      <a href="pages/test.html" class="btn btn-primary" style="background:var(--gold); color:var(--ink);">Empezar test →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer container">
+  <span>Manduco · hecho con calma</span>
+  <span>© <span data-year></span> Manduco. No sustituye atención profesional.</span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/deck.js"></script>
+<script>
+  // Pinta las seis categorías en la portada
+  document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("category-grid");
+    CATEGORIES.forEach(cat => {
+      const count = TIPS.filter(t => t.category === cat.id).length;
+      const el = document.createElement("a");
+      el.href = `pages/consejos.html?cat=${cat.id}`;
+      el.className = "category-tile";
+      el.innerHTML = `
+        <span class="icon">${cat.icon}</span>
+        <h3>${cat.label}</h3>
+        <p>${cat.desc}</p>
+        <span class="tag-count">${count} consejos</span>
+      `;
+      grid.appendChild(el);
+    });
+  });
+</script>
+
+</body>
+</html>
